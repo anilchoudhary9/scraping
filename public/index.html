@@ -1,0 +1,195 @@
+<!-- Anil Choudhary -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Anil Choudhary">
+
+    <title>Data Crawling Pannel</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            </button>
+        <a class="navbar-brand" href="index.html">Admin Pannel for medium.com crawling</a>
+            </div>
+<!--Top -->
+     <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>Ayush</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> 4:32 PM</p>
+                                        <p>Awsome code!</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a>Read all new messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Selection <span class="label label-default">Done</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a>View all</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Ayush Lodhi<b class="caret"></b></a>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        
+     <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Master Page</a>
+                    </li>
+                </ul>
+            </div>
+                </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Data Crawling/ Scraping</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Enter The Tag You Want To Crawl
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> </h3>
+                            </div>
+                            <div class="row" align="center">
+    <h3>Medium.com Enter Tag here in Search Bar</h3> 
+      <div class="col-md-4">  
+        <form action="/scrap" method="post">
+            <div class="form-group" align="center">
+                <label for="tags">Enter Tags</label>
+                <input class="form-control" type="text" name="tags" id="tags">
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+                                </br></div>
+
+                            </div>
+                            <div ng-app="myApp" ng-controller="MyCtrl">
+    <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+    <select ng-model="pageSize" id="pageSize" class="form-control">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+     </select>
+    <ul>
+        <li ng-repeat="item in data | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+            {{item}}
+        </li>
+    </ul>
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<table>
+        <tr> 
+          <td align="right" class="text_small" valign="top" bgcolor="white" >Developed by <a>Anil Choudhary  &nbsp </a></td>
+        </tr>
+</table>
+    <!-- jQuery-->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap-->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js'></script>
+
+    <script src="js/pageing.js"></script>   
+  
+  <script type="text/javascript">
+
+      $('#submit').click(function(){  
+
+     $.ajax({ 
+           url: '/ajax',
+           type: 'POST',
+           cache: false, 
+           data: { field1: 1, field2: 2 }, 
+           success: function(data){
+              //alert('Success!')
+           }
+           , error: function(jqXHR, textStatus, err){
+               //alert('text status '+textStatus+', err '+err)
+           }
+        })
+     });            
+
+</script>
+
+</body>
+
+</html>
+
+
