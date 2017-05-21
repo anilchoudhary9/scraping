@@ -1,0 +1,25 @@
+I used node.js to make the Crawling / Scraping Application.
+
+Used Simple HTML with Inegration of css and java scripting
+
+Also used Bootstraping and small feature of Angularjs.
+
+Results can be stored in file = result.csv
+
+Steps to run
+
+Step 1 : Open Powershell at Project Location.
+
+step 2 : Run Command of node.js - npm install
+
+step 3 : Run node.js command - npm start
+
+step 4 : Browse - localhost:3000
+
+Step 5 : Enter Tag You Want Crawl.
+
+Step 6 : File Result.csv will save at Project Folder.
+
+** Prerequest : Delete alredy present result.csv file for new result.
+
+
